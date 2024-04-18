@@ -20,5 +20,5 @@ from tutorialapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('turtorialapp.urls')),
+    path('', include('tutorialapp.urls')),
 ]

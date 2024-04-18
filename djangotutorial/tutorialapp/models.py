@@ -21,4 +21,4 @@ class Student(models.Model):
 
     
     def __str__(self):
-        return "" + str(self.lastname + ", " + str(self.firstname)
+        return "" + str(self.lastname + ", " + str(self.firstname))
