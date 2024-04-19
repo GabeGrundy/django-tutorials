@@ -17,8 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path , include
 from tutorialapp.views import *
+from tutorialapp import views 
 
 urlpatterns = [
+    path('', views.home),
     path('admin/', admin.site.urls),
     path('', include('tutorialapp.urls')),
+    path('base/', views.base),    
+    path('dashboard/', views.dashboard),
+    path('students/',views.students),
+    path('teachers/',views.teachers),
 ]
+

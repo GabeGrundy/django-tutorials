@@ -20,4 +20,24 @@ def students(request):
         'students': students,
     }
     
+    
+    return render(request, 'students.html', context)
+
+def home(request):
+    context={
+    }
+    
     return render(request, 'base.html', context)
+
+
+def dashboard(request):
+    context={
+    }
+    
+    return render(request, 'dashboard.html', context)
+
+def teachers(request):
+    context={
+    }
+    
+    return render(request, 'teachers.html', context)
