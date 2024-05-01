@@ -49,12 +49,4 @@ def login(request):
     return render(request, 'login.html', context)
 
 
-def signup(request):
     
-    form = UserCreationForm
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid:
-            form.save
-    context={'form':form}
-    return render(request, 'signup.html', context)

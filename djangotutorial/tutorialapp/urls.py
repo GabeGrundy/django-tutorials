@@ -7,8 +7,7 @@ urlpatterns = [
     path('students/',views.students, name='students'),
     path('teachers/',views.teachers, name='teachers'),
     path('', views.home,  name= 'home'),
-    path('signup/', views.signup,  name= 'signup'),
-    path('login/', views.login,  name= 'login'),
+    path('accounts/',include('django.contrib.auth.urls')),
 ]
 
 

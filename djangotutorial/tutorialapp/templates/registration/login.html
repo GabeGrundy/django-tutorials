@@ -51,14 +51,17 @@ Port Orchard High School
     <div class="px-3 py-2 border-bottom mb-3">
       <div class="container d-flex flex-wrap justify-content-center">
         <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+          
         </form>
 
-        <a href="/login" class="nav-link text-white">
+        {% if user.is_authenticated %}
+      </a>
+      <a href="/accounts/logout" class="nav-link text-white">
+        <button type="button" class="btn btn-light text-dark me-2">Logout</button>
+        {% else %}
+        <a href="/accounts/login" class="nav-link text-white">
           <button type="button" class="btn btn-light text-dark me-2">Login</button>
-        </a>
-        <a href="/signup" class="nav-link text-white">
-          <button type="button" class="btn btn-primary">Sign-up</button>
+        {% endif %}
         </a>
         </div>
       </div>
@@ -68,22 +71,45 @@ Port Orchard High School
 </body>
 </html>
 
+<style>
+  html,
+body {
+  height: 100%;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 
 
+</style>  
+
+<main class="form-signin w-100 m-auto">
+  <form method='post'>
+    {% csrf_token %}
     
-</style>
-</head>
-<body>
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    {{form}}
+    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+  </form>
+</main>
 
-
-
-    <form method="POST" actions"" >
-            
-       
-        {% csrf_token %}
-        {{form.as_p }}
-            
-        <input type='submit' name='Create User'>
-
-
-    </form>
+<
