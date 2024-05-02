@@ -37,10 +37,14 @@ def dashboard(request):
     return render(request, 'dashboard.html', context)
 
 def teachers(request):
-    context={
-    }
     
-    return render(request, 'teachers.html', context)
+    #query the database and save all students to a list
+    teachers = teachers.objects.all()
+    
+    #send all variables and objects and lists to the template
+    context={
+        'teachers': teachers,
+    }
 
 
 def login(request):

@@ -22,3 +22,28 @@ class Student(models.Model):
     
     def __str__(self):
         return "" + str(self.lastname + ", " + str(self.firstname))
+
+
+class Teacher(models.Model):
+
+    CLASSES = (
+        ('Science','Science' ),
+        ('Math','Math' ),
+        ('History','History'),
+        ('ELA','ELA'),
+        ('Foreign Language','Foreign Language'),
+        ('Art','Art'),
+        
+
+
+
+    )
+
+    firstname = models.CharField(max_length=200, null=True)
+    lastname = models.CharField(max_length=200, null=True)
+    middlename = models.CharField(max_length=200, null=True)
+    grade = models.CharField(max_length=200, null=True, choices= CLASSES)
+
+    
+    def __str__(self):
+        return "" + str(self.lastname + ", " + str(self.firstname))
