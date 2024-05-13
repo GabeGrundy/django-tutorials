@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,11 +68,53 @@ Port Orchard High School
       </div>
     </div>
   </header>
-  
-  {% if user.is_authenticated %}
-  <h2> Welcome Back, {{user.username}} <h2>
 
-  {% endif%}
+   
+  </a>
+  </div>
+  </div>
+  </header>
+  </body>
+  </html>
+  <div class="image-overlay">
+  <img src="{% static 'courtyard.png' %}" alt="Port Orchard High School">
+  <div class="overlay-text">
+  {% if user.is_authenticated %}:
+    <h1>Welcome Back, {{user.username}}</h1>
+  {%elif%}:
+    <h1>Welcome Back, Please login to see your dashboard</h1>
+  </div>
+  
+  <style>
+  .image-overlay {
+  position: relative;
+  width: 100%;
+  }
+
+  .image-overlay img {
+  display: block;
+  width: 100%;
+  height: auto;
+  }
+
+  .overlay-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust transparency here */
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  }
+
+  .overlay-text h1 {
+  margin: 0;
+  color: #333;
+  font-size: 40px;
+  }
+  </style>
+
 
 
 
