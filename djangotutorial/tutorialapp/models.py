@@ -42,7 +42,7 @@ class Teacher(models.Model):
     firstname = models.CharField(max_length=200, null=True)
     lastname = models.CharField(max_length=200, null=True)
     middlename = models.CharField(max_length=200, null=True)
-    grade = models.CharField(max_length=200, null=True, choices= CLASSES)
+    classes = models.CharField(max_length=200, null=True, choices= CLASSES)
 
     
     def __str__(self):

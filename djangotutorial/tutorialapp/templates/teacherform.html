@@ -29,11 +29,11 @@ Port Orchard High School
   {% endfor %}
 
 {% endif %}
-<form method='post' action="" id='studentform'>
+<form method='post' action="" id='teacherform'>
     {% csrf_token %}
     {{form.as_p}}
     <button type= "submit" class= "btn btn-primary" value = "Submit" id = "submitbutton">
-        Submit Student
+        Submit Teachers
     </button>
 </form>
 

@@ -38,11 +38,16 @@ Port Orchard High School
               </a>
             </li>
             <li>
-                <a href="/teachers" class="nav-link text-secondary">
+                <a href="#" class="nav-link text-secondary">
                   <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
                   Teachers
                 </a>
               </li>
+              <li>
+                <a href="{% url 'profile' %}" class="nav-link text-white">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                  Profile
+                </a>
               </li>
           </ul>
         </div>
@@ -53,7 +58,6 @@ Port Orchard High School
         <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
           
         </form>
-
         {% if user.is_authenticated %}
       </a>
       <a href="/accounts/logout" class="nav-link text-white">
@@ -62,7 +66,6 @@ Port Orchard High School
         <a href="/accounts/login" class="nav-link text-white">
           <button type="button" class="btn btn-light text-dark me-2">Login</button>
         {% endif %}
-        
         </a>
         </div>
       </div>
@@ -73,16 +76,29 @@ Port Orchard High School
 </html>
 
 <br><br><br>
-<center><h1>Students</h1></center>
-
-<table class="table table-striped">
+<center><h1>Teachers</h1></center>
+<center>
+<table class="table table-striped" style="width:75%;">
     
     <thead>
+      <tr>
         <th>Last Name</th>
         <th>First Name</th>
         <th>Middle Name</th>
-
+        <th>Classes</th>
+      </tr>  
     </theaD>
+    <tbody>
+      {% for i in Teachers%}
+        <tr>
+          <td>{{i.lastname}}</td>
+          <td>{{i.firstname}}</td>
+          <td>{{i.middlename}}</td>
+          <td>{{i.classes}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
 
 </table>
 
+</center>

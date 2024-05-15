@@ -21,7 +21,7 @@
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a href="/#" class="nav-link text-secondary">
+              <a href="/#" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                 Home
               </a>
@@ -45,11 +45,12 @@
               </a>
             </li>
             <li>
-              <a href="{% url 'profile' %}" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                Profile
-              </a>
-            </li>
+                <a href="{% url 'profile' %}" class="nav-link text-secondary">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                  Profile
+                </a>
+              </li>
+              
           </ul>
         </div>
       </div>
@@ -59,62 +60,62 @@
         <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
           
         </form>
- 
-         
         {% if user.is_authenticated %}
-      </a>
-      <a href="/accounts/logout" class="nav-link text-white">
-        <button type="button" class="btn btn-light text-dark me-2">Logout</button>
-        {% else %}
-        <a href="/accounts/login" class="nav-link text-white">
-          <button type="button" class="btn btn-light text-dark me-2">Login</button>
-        {% endif %}
+    </a>
+    <a href="/accounts/logout" class="nav-link text-white">
+      <button type="button" class="btn btn-light text-dark me-2">Logout</button>
+      {% else %}
+      <a href="/accounts/login" class="nav-link text-white">
+        <button type="button" class="btn btn-light text-dark me-2">Login</button>
+      {% endif %} 
 
-       
-        </a>
-      </div>
-    </div>
-  </header>
-</body>
-</html>
-<div class="image-overlay">
-  <img src="{% static 'school.png' %}" alt="Port Orchard High School">
-  <div class="overlay-text">
-    <h1>Welcome to Port Orchard High School!</h1>
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&bgcolor=%23ffffff&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=d2djbG91ZC5vcmdfY2xhc3Nyb29tN2I3NWU1YzlAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%230B8043&color=%23055524" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>    
-  </div>
+
+    </a>
 </div>
-
+</div>
+</header>
 </body>
 </html>
+<div class="table" width="75%">
+<table boarder="1" width="75%" class='table table-light'>
+                <thread>
+                <tr>
+                    <th scope='col'>Last Name</th>
+                    <th scope='col'>First Name</th>
+                    <th scope='col'>User Name</th>
+                    <th scope='col'>Email</th>
+                    <th scope='col'>Last Login</th>
+                    <th scope='col'>First Login</th>
+                    <th scope='col'>Groups</th>
+                </tr>
+            </thread>
+             <tbody>
+                 <tr>
+                     
+                    <td>{{request.user.last_name}}</td>
+                    <td>{{request.user.first_name}}</td>
+                    <td>{{request.user.username}}</td>
+                    <td>{{request.user.email}}</td>
+                    <td>{{request.user.last_login}}</td>
+                    <td>{{request.user.date_joined}}</td>
+                    <td>
+                        {%for group in request.user.groups.all%}
+                            {{group.name}}<br>
+                        {%endfor%}
 
-<style>
-  .image-overlay {
-    position: relative;
-    width: 100%;
-  }
-  
-  .image-overlay img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .overlay-text {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.8); /* Adjust transparency here */
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
-  .overlay-text h1 {
-    margin: 0;
-    color: #333;
-    font-size: 40px;
-  }
-  </style>
-  
+
+                    </td>
+</div>
+</body>
+            
+                    
+
+
+                    
+                   
+
+
+
+
+         
+                    

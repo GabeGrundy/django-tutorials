@@ -1,8 +1,7 @@
-from dataclasses import fields
-from importlib.metadata import files
-from socket import fromshare
-from django import fromshare
+
 from .models import *
+from django import forms
+
 
 class StudentForm(forms.ModelForm):
     class Meta:
@@ -12,4 +11,4 @@ class StudentForm(forms.ModelForm):
 class TeacherForm(forms.ModelForm):
     class Meta:
         model = Teacher
-        fields = ['firstname','lastname','middlename','class']
+        fields = ['firstname','lastname','middlename','classes']

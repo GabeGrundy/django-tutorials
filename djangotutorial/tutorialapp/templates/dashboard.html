@@ -45,6 +45,12 @@ Port Orchard High School
                 Teachers
               </a>
             </li>
+            <li>
+              <a href="{% url 'profile' %}" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                Profile
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -79,10 +85,9 @@ Port Orchard High School
   <div class="image-overlay">
   <img src="{% static 'courtyard.png' %}" alt="Port Orchard High School">
   <div class="overlay-text">
-  {% if user.is_authenticated %}:
+  
     <h1>Welcome Back, {{user.username}}</h1>
-  {%elif%}:
-    <h1>Welcome Back, Please login to see your dashboard</h1>
+
   </div>
   
   <style>

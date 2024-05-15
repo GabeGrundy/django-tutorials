@@ -43,6 +43,11 @@ Port Orchard High School
                   Teachers
                 </a>
               </li>
+              <li>
+                <a href="{% url 'profile' %}" class="nav-link text-white">
+                  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                  Profile
+                </a>
               </li>
           </ul>
         </div>
@@ -72,15 +77,28 @@ Port Orchard High School
 
 <br><br><br>
 <center><h1>Students</h1></center>
-
-<table class="table table-striped">
+<center>
+<table class="table table-striped" style="width:75%;">
     
     <thead>
+      <tr>
         <th>Last Name</th>
         <th>First Name</th>
         <th>Middle Name</th>
-
+        <th>Grade</th>
+      </tr>  
     </theaD>
+    <tbody>
+      {% for i in students%}
+        <tr>
+          <td>{{i.lastname}}</td>
+          <td>{{i.firstname}}</td>
+          <td>{{i.middlename}}</td>
+          <td>{{i.grade}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
 
 </table>
 
+</center>
